@@ -1,1 +1,4 @@
 config.py
+big_movie_csv/genome-scores.csv
+tag_files/tag_relevance.dat
+big_movie_csv/ratings.csv
