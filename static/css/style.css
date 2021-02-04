@@ -24,3 +24,18 @@ body {
   color: cornsilk;
   background-color: rgb(247, 237, 204);
 }
+
+.recommendations {
+  background-color: #392768;
+  border-color: lavender;
+  border-width: 2px;
+  border-style: solid;
+  border-collapse: collapse;
+  padding: 10px;
+
+  color: lavender;
+}
+
+.recommendations thead {
+  background-color: #080560;
+}
