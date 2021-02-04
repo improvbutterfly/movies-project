@@ -8,124 +8,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
     <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
-<body style="background-color: rgb(250, 248, 241);">
+<body>
 
-<h1>Movie Recommender!</h1> 
+<h1>Title Selection: {{ title }}</h1> 
 
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <aside class="filters">
-            <div class="panel panel-default">
-                <form id="filter-form">
-                  <ul class="list-group" id="filters">
-                    <div class="panel-body">
-                      <li class="filter list-group-item">
-                    <button id="click-me" type="button" class="btn btn-danger">Click here for a random Pok&eacute;mon</button>
-                    <br> 
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="input-name">Pok&eacute;mon Name</label>
-                        <input class="form-control" id="input-name" type="text" placeholder="Pikachu">
-                      </li>
-                      <li class="filter list-group-item">
-                        <button id="filter-btn" type="submit" class="btn btn-default">Search by Name</button>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="input-pokedex">Pok&eacute;dex Number (max value is 801)</label>
-                        <input class="form-control" id="input-pokedex" type="text" placeholder="801">
-                      </li>
-                      <li class="filter list-group-item">
-                        <button id="filter-pokedex" type="submit" class="btn btn-default">Search by Pok&eacute;dex #</button>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="generation">Generation</label>
-                        <select class="form-control" id="generation" name="generation">
-                          <option value="all">all</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                        </select>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="type">Pok&eacute;mon Type</label>
-                        <select class="form-control" id="type" name="type">
-                          <option value="all">all</option>
-                        </select>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="legendary">Legendary?</label>
-                        <select class="form-control" id="legendary" name="legendary">
-                          <option value="all">Doesn't matter</option>
-                          <option value="1">Yes</option>
-                          <option value="0">No</option>
-                        </select>
-                      </li>
-                      <li class="filter list-group-item">
-                  <button id="filter-gen" type="submit" class="btn btn-default">Filter Random Pok&eacute;mon</button>
-                      </li>
-                  </ul>
-                </form>
-            </div>
-          </aside>
-        </div>
-      <div class="col">
-        <div class="pokemoncard">
-          <img src="static/images/pokemon/pikachu.jpg" id="pokemon-image" width="300"/>
-            <h2 id="pokemon-name">Pikachu</h2>
-            <br>
-              <p id="pokemon-entry">Here you will see the Pok&eacute;mon blurb</p>
-              <br>
-                <table>
-                  <tbody>
-                    <tr>
-                        <th>Pok&eacute;dex #:</td>
-                        <td id="_id"></td>
-                    </tr>
-                    <tr>
-                        <th>Gen:</td>
-                        <td id="gen"></td>
-                    </tr>
-                    <tr>
-                        <th>Type 1:</td>
-                        <td id="type1"></td>
-                    </tr>
-                    <tr>
-                        <th>Type 2:</td>
-                        <td id="type2"></td>
-                    </tr>
-                    <tr>
-                        <th>Classification:</td>
-                        <td id="classification"></td>
-                    </tr>
-                    <tr>
-                        <th>Height:</td>
-                        <td id="height"></td>
-                    </tr>
-                    <tr>
-                        <th>Weight:</td>
-                        <td id="weight"></td>
-                    </tr>
-                    <tr>
-                        <th>HP:</td>
-                        <td id="hp"></td>
-                    </tr>
-                    <tr>
-                        <th>Speed:</td>
-                        <td id="speed"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-      </div>
-    </div>
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered recommendations">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>View Similar Recommendations</th>
+      </tr>
+    </thead>
+    <tbody>
+  {% for movie in recommend_list %}
+    <tr>
+      <td>{{ movie }}</td>
+      <td><a href="/title/{{ movie }}">View more</a></td>
+    </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
