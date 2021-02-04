@@ -10,10 +10,11 @@
     <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
-
-<body style="background-color: rgb(250, 248, 241);">
+<body>
 
 <h1>Movie Recommender!</h1> 
+<br>
+<br>
 
 <div class="container">
     <div class="row">
@@ -24,52 +25,18 @@
                   <ul class="list-group" id="filters">
                     <div class="panel-body">
                       <li class="filter list-group-item">
-                    <button id="click-me" type="button" class="btn btn-danger">Click here for a random Pok&eacute;mon</button>
+                        <form action="/random" method="get">
+                        <input id="click-me" type="submit" value="Click here for a random Movie" class="btn-danger">
+                    </form>
                     <br> 
+                    <br>
                       </li>
                       <li class="filter list-group-item">
-                        <label for="input-name">Pok&eacute;mon Name</label>
-                        <input class="form-control" id="input-name" type="text" placeholder="Pikachu">
+                        <label for="input-name">Search for Movie by Name (case sensitive)</label>
+                        <input class="form-control" id="input-name" type="text" placeholder="Gladiator">
                       </li>
                       <li class="filter list-group-item">
                         <button id="filter-btn" type="submit" class="btn btn-default">Search by Name</button>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="input-pokedex">Pok&eacute;dex Number (max value is 801)</label>
-                        <input class="form-control" id="input-pokedex" type="text" placeholder="801">
-                      </li>
-                      <li class="filter list-group-item">
-                        <button id="filter-pokedex" type="submit" class="btn btn-default">Search by Pok&eacute;dex #</button>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="generation">Generation</label>
-                        <select class="form-control" id="generation" name="generation">
-                          <option value="all">all</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                        </select>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="type">Pok&eacute;mon Type</label>
-                        <select class="form-control" id="type" name="type">
-                          <option value="all">all</option>
-                        </select>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="legendary">Legendary?</label>
-                        <select class="form-control" id="legendary" name="legendary">
-                          <option value="all">Doesn't matter</option>
-                          <option value="1">Yes</option>
-                          <option value="0">No</option>
-                        </select>
-                      </li>
-                      <li class="filter list-group-item">
-                  <button id="filter-gen" type="submit" class="btn btn-default">Filter Random Pok&eacute;mon</button>
                       </li>
                   </ul>
                 </form>
@@ -77,50 +44,21 @@
           </aside>
         </div>
       <div class="col">
-        <div class="pokemoncard">
-          <img src="static/images/pokemon/pikachu.jpg" id="pokemon-image" width="300"/>
-            <h2 id="pokemon-name">Pikachu</h2>
+        <div class="moviecard">
+            <h2 id="movie-recommend">Recommend Movies</h2>
             <br>
               <p id="pokemon-entry">Here you will see the Pok&eacute;mon blurb</p>
               <br>
                 <table>
                   <tbody>
-                    <tr>
-                        <th>Pok&eacute;dex #:</td>
-                        <td id="_id"></td>
-                    </tr>
-                    <tr>
-                        <th>Gen:</td>
-                        <td id="gen"></td>
-                    </tr>
-                    <tr>
-                        <th>Type 1:</td>
-                        <td id="type1"></td>
-                    </tr>
-                    <tr>
-                        <th>Type 2:</td>
-                        <td id="type2"></td>
-                    </tr>
-                    <tr>
-                        <th>Classification:</td>
-                        <td id="classification"></td>
-                    </tr>
-                    <tr>
-                        <th>Height:</td>
-                        <td id="height"></td>
-                    </tr>
-                    <tr>
-                        <th>Weight:</td>
-                        <td id="weight"></td>
-                    </tr>
-                    <tr>
-                        <th>HP:</td>
-                        <td id="hp"></td>
-                    </tr>
-                    <tr>
-                        <th>Speed:</td>
-                        <td id="speed"></td>
-                    </tr>
+                    <tbody>
+                      {% for movie in recommend_list %}
+                        <tr>
+                          <td>{{ movie }}</td>
+                          <td><a href="/title/{{ movie }}">View more</a></td>
+                        </tr>
+                      {% endfor %}
+                        </tbody>
                 </tbody>
             </table>
         </div>

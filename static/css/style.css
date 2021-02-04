@@ -39,3 +39,15 @@ body {
 .recommendations thead {
   background-color: #080560;
 }
+
+.btn-danger {
+  color: black;
+  align-content: center;
+}
+
+#filter-btn, #filter-btn2, #filter-gen, #filter-graph, #filter-pokedex, #view-stats, #name-search { 
+  background-color: #e7e7e7; 
+  color: black;
+  align-content: center;
+  display: inline-block;
+}
