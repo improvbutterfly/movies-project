@@ -42,11 +42,6 @@ td {font-size: 18px;
   text-align: middle;
 }
 
-label[for=input-name]{ font-size: 20px;
-  text-align: center;
-  align-content: center
-}
-
 .recommendations {
   background-color: #392768;
   border-color: lavender;
