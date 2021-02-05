@@ -36,8 +36,8 @@ def index():
 	all_movies = main_df.to_json(orient='index') 
 	return render_template("index.html", all_movies=all_movies)
 
-@app.route("/random")
-def random():
+@app.route("/random_movie")
+def random_movie():
     x = random.randint(0, len(main_df))
     single_movie = main_df['title'][x]
 
