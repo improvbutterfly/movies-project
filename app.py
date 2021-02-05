@@ -37,7 +37,7 @@ def index():
 	return render_template("index.html", all_movies=all_movies)
 
 @app.route("/random")
-def random():
+def random_movie():
     x = random.randint(0, len(main_df))
     single_movie = main_df['title'][x]
 

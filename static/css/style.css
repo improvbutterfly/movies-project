@@ -2,6 +2,8 @@ h1 {
   color : black;
   text-align: center;
   font-weight: bold;
+  background-color: darkgreen;
+  padding: 40px;
 }
   
 h2 {
@@ -38,6 +40,7 @@ body {
 
 .recommendations thead {
   background-color: #080560;
+  font-size: 14pt;
 }
 
 .btn-danger {
@@ -50,4 +53,40 @@ body {
   color: black;
   align-content: center;
   display: inline-block;
+}
+
+nav {
+  background-color: rgb(233, 211, 85);
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+#footer {
+  background-color: rgb(233, 211, 85);
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0px;
+}
+   
+.topbar-center-logo-mobile .menu-icon {
+  vertical-align: text-top;
+  width: 100%;
+  text-align: center;
+}
+
+#topbar-center-logo {
+  vertical-align: text-top;
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 14pt;
+  margin: 10px;
+}
+
+.title-bar-center a, img {
+  padding: 10px;
 }

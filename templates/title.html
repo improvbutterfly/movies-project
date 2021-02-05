@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<script src="/static/js/navbar.js"></script>
 
 <h1>Title Selection: {{ title }}</h1> 
 
@@ -22,6 +23,7 @@
       <tr>
         <th>Title</th>
         <th>View Similar Recommendations</th>
+        <th>Search Google to Learn More</th>
       </tr>
     </thead>
     <tbody>
@@ -29,6 +31,7 @@
     <tr>
       <td>{{ movie }}</td>
       <td><a href="/title/{{ movie }}">View more</a></td>
+      <td><a href="https://www.google.com/search?q={{ movie }}">Search Google</a></td>
     </tr>
   {% endfor %}
     </tbody>
