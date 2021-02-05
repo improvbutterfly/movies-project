@@ -17,54 +17,30 @@
 <br>
 
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <aside class="filters">
-            <div class="panel panel-default">
+    <div class="col">
+    
+          <div class="panel panel-default">
                 <form id="filter-form">
                   <ul class="list-group" id="filters">
                     <div class="panel-body">
+                    </li>
+                    <li class="filter list-group-item">
+                      <label for="input-name">Search for Movie by Name (case sensitive)</label>
+                      <input class="form-control" id="input-name" type="text" placeholder="Gladiator">
+                    </li>
+                    <br> 
+                    <br>
+                    <li class="filter list-group-item">
+                      <button id="filter-btn" type="submit" class="btn btn-default">Search by Name</button>
+                    </li>
                       <li class="filter list-group-item">
                         <form action="/random" method="get">
                         <input id="click-me" type="submit" value="Click here for a random Movie" class="btn-danger">
-                    </form>
-                    <br> 
-                    <br>
-                      </li>
-                      <li class="filter list-group-item">
-                        <label for="input-name">Search for Movie by Name (case sensitive)</label>
-                        <input class="form-control" id="input-name" type="text" placeholder="Gladiator">
-                      </li>
-                      <li class="filter list-group-item">
-                        <button id="filter-btn" type="submit" class="btn btn-default">Search by Name</button>
-                      </li>
-                  </ul>
-                </form>
+                        </form>
             </div>
           </aside>
-        </div>
-      <div class="col">
-        <div class="moviecard">
-            <h2 id="movie-recommend">Recommend Movies</h2>
-            <br>
-              <p id="pokemon-entry">Here you will see the Pok&eacute;mon blurb</p>
-              <br>
-                <table>
-                  <tbody>
-                    <tbody>
-                      {% for movie in recommend_list %}
-                        <tr>
-                          <td>{{ movie }}</td>
-                          <td><a href="/title/{{ movie }}">View more</a></td>
-                        </tr>
-                      {% endfor %}
-                        </tbody>
-                </tbody>
-            </table>
-        </div>
-      </div>
     </div>
-</div>
+    
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
