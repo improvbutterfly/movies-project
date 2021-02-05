@@ -21,10 +21,10 @@
     <div class="col">
     
           <div class="panel panel-default">
-                <form id="filter-form">
                   <ul class="list-group" id="filters">
                     <div class="panel-body">
-                    </li>
+                    <form id="filter-form">
+
                     <li class="filter list-group-item">
                       <label for="input-name">Search for Movie by Name (case sensitive)</label>
                       <input class="form-control" id="input-name" type="text" placeholder="Gladiator">
@@ -34,12 +34,15 @@
                     <li class="filter list-group-item">
                       <button id="filter-btn" type="submit" class="btn btn-default">Search by Name</button>
                     </li>
+                  </form>
                       <li class="filter list-group-item">
-                        <form action="/random" method="get">
+                        <form action="/random" method="get">
                         <input id="click-me" type="submit" value="Click here for a random Movie" class="btn-danger">
                         </form>
+                      </li>
+                    </div>
+                  </ul>
             </div>
-          </aside>
     </div>
     
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
