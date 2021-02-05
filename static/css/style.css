@@ -31,6 +31,11 @@ body {
   background-color: rgb(rgb(247, 247, 247);
 }
 
+label[for=input-name]{ font-size: 20px;
+  text-align: center;
+  align-content: center
+}
+
 .recommendations {
   background-color: #392768;
   border-color: lavender;
@@ -49,6 +54,7 @@ body {
 .btn-danger {
   color: black;
   align-content: center;
+  display: inline-block;
 }
 
 #filter-btn, #filter-btn2, #filter-gen, #filter-graph, #filter-pokedex, #view-stats, #name-search { 
