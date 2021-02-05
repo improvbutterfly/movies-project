@@ -2,8 +2,9 @@ h1 {
   color : black;
   text-align: center;
   font-weight: bold;
-  background-color: darkgreen;
-  padding: 40px;
+  padding: 15px;
+  font-size: 35px;
+  text-decoration: underline;
 }
   
 h2 {
@@ -22,13 +23,23 @@ h4 {
   text-align: center;
 }
 
-p1 {
+p {
   color: black;
   text-align: center;
+  padding-left: 245px;
+  padding-right: 245px
 }
 
 body {
-  background-color: rgb(rgb(247, 247, 247);
+  background-color: rgb(247, 247, 247);
+}
+
+thead { font-size: 30px;
+  text-align: middle;
+}
+
+td {font-size: 18px;
+  text-align: middle;
 }
 
 .recommendations {
@@ -60,6 +71,7 @@ body {
 
 nav {
   background-color: rgb(233, 211, 85);
+  font-size: 45px;
   font-weight: bold;
   color: black;
   text-align: center;

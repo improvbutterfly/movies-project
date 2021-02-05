@@ -10,11 +10,12 @@
     <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
+
 <body>
 
 <script src="/static/js/navbar.js"></script>
 
-<h1>Movie Recommender!</h1> 
+<h1>Welcome to the Movie Recommender!</h1> 
 <br>
 <br>
 
@@ -49,12 +50,20 @@
                 </form>
           </div>
  </div>
- <h2> THe Movie Recommendation Project </h2><br>
- <p1>We built a Natural Language Processing (NLP) movie recommender using Python and the SK-Learn kit. 
-   First, we must acknowledge and cite: F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context. ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4: 19:1–19:19. <https://doi.org/10.1145/2827872></https:>
-  for gathering 60,000 movies from IMBD and 1,000,000 user generated "tags" (aka a short phrase or descriptive word about the movie.)
+ <br>
+ <h2> The Movie Recommendation Project </h2><br>
+ <p>We built a Natural Language Processing (NLP) movie recommender using Python and the SK-Learn kit. The dataset (cited below) gathered 60,000 movies and 1,000,000 user generated tags from IMBD.
+   An example of the tags for the movie <b>Titanic</b> are: <br> <br> <i>"drama romance james cameron kate winslet leonardo dicaprio bittersweet catastrophe drama epic historical love true story".</i> <br><br>
+   Together, they mentioned actors, directors, descriptions, and more. We cleaned and aggregated the tags grouped by movie_id to create our word soup. Then we made a matrix with the word soup to find
+   the cosine_similarity between the tags. This is the machine learning, NLP aspect, which seeks to compare tags between movies, and return the most similar tag relationships.
   
-  </p1>
+   
+   <br><br> We acknowledge and cite: 
+   <br><br><b>F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context. <br>
+   ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4: 19:1–19:19. <https://doi.org/10.1145/2827872></https:></b>
+   <br><br>
+  
+  </p>
  
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
