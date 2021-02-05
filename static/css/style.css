@@ -60,6 +60,7 @@ td {font-size: 18px;
 .btn-danger {
   color: black;
   align-content: center;
+  display: inline-block;
 }
 
 #filter-btn, #filter-btn2, #filter-gen, #filter-graph, #filter-pokedex, #view-stats, #name-search { 
