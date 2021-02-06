@@ -47,7 +47,16 @@ def random_movie():
 
 @app.route("/title/<title>")
 def title(title):
-	recommend_list = recommend(title)
+
+	# First we want to make sure the title exists in the dataset
+
+	if len(main_df.loc[main_df['title']==title, :]) > 0:
+		recommend_list = recommend(title)
+	else:
+		# See if we can locate similar titles
+		title_result = main_df[main_df['title'].str.contains(title, case=False)]
+		recommend_list = title_result['title'].values.tolist()
+		title = "Couldn't Locate '" + title + "'. We Did Find:"
 
 	return render_template("title.html", recommend_list=recommend_list, title=title)
 
