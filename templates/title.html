@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Movie Recommender</title>
+    <title>Movie Recommender: {{ title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -14,9 +14,10 @@
 <body>
 <script src="/static/js/navbar.js"></script>
 
-<h1>Title Selection:         {{ title }}</h1> 
+<h1>{{ title }}</h1> 
 
 <div class="container">
+  <p>These titles are recommended based on your search title. Feel free to explore other related titles, or click on the Google search link to find out more about the suggested title(s).</p>
   <div class="table-responsive">
   <table class="table table-striped table-bordered recommendations">
     <thead>
